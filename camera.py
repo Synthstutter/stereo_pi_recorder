@@ -1,13 +1,13 @@
 import picamera
-from trigger import Trigger_pud
+from trigger import Trigger
 from time import sleep
 from led import Led
 
 cam = picamera.PiCamera()
 led = Led()
 
-def record_video(seconds):
-    cam.start_recording('testvid.h264')
+def record_video(name, seconds):
+    cam.start_recording(name)
     recording = True
     while recording:
         for second in range(seconds/2-1):
