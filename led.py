@@ -12,3 +12,6 @@ class Led():
 
     def off(self):
         GPIO.output(self.pin, GPIO.LOW)
+
+    def cleanup(self):
+        GPIO.cleanup()

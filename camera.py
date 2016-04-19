@@ -11,11 +11,14 @@ def record_video(name, seconds):
     recording = True
     while recording:
         for second in range(seconds/2-1):
-            print "recording..."
-            led.on()
-            sleep(1)
-            led.off()
-            sleep(1)
+            try:
+                print "recording..."
+                led.on()
+                sleep(1)
+                led.off()
+                sleep(1)
+            except KeyboardInterrupt:  
+                led.cleanup()     
         recording = False
     cam.stop_recording()
     print "end recording"

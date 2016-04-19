@@ -17,8 +17,11 @@ if __name__ == "__main__":
     running = True
     
     while running:
-        green_led.on()
-        trigger.read_state()
-        if trigger.input_state == False:
-            green_led.off()
-            camera.record_video(file_name.get_name(), video_length)           
+        try:
+            green_led.on()
+            trigger.read_state()
+            if trigger.input_state == False:
+                green_led.off()
+                camera.record_video(file_name.get_name(), video_length)           
+        except KeyboardInterrupt:  
+            green_led.cleanup()    
