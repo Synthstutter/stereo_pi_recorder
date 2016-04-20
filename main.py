@@ -7,7 +7,7 @@ import save_name
 
 video_length = 10
 green_led_pin = 19
-directory = "/home/nick/videos"
+save_directory = "/mnt/nfsserver/videos"
 device = "L"
 
 pi_master = True
@@ -16,13 +16,13 @@ directory_to_mount = "192.168.0.3:/mnt/nfsserver"
 mount_location = "/mnt/nfs"
 if not pi_master:
     nfs_mount(directory_to_mount, mount_location)
-
+    save_directory = "/mnt/nfs/videos"
 
 if __name__ == "__main__":
         
     trigger = Trigger()
     green_led = Led(green_led_pin)
-    file_name = save_name.File_namer(directory, device)
+    file_name = save_name.File_namer(save_directory, device)
     
     running = True
     
