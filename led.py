@@ -2,16 +2,18 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
+
+
 class Led():
-    def __init__(self, pin = 26):
-        self.pin = pin
-        GPIO.setup(self.pin, GPIO.OUT)
+    def __init__(self, led_pin = 26):
+        self.led_pin = led_pin
+        GPIO.setup(self.led_pin, GPIO.OUT)
 
-    def on(self):
-        GPIO.output(self.pin, GPIO.HIGH)
+    def led_on(self):
+        GPIO.output(self.led_pin, GPIO.HIGH)
 
-    def off(self):
-        GPIO.output(self.pin, GPIO.LOW)
+    def led_off(self):
+        GPIO.output(self.led_pin, GPIO.LOW)
 
-    def cleanup(self):
+    def led_cleanup(self):
         GPIO.cleanup()
