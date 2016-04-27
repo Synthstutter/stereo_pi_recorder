@@ -10,7 +10,7 @@ def nfs_mount(directory_to_mount, mount_location):
     
 
 def move_file_to_mount(save_directory, mv_directory):
-    onlyfiles = [f for f in os.listdir(save_directory) if isfile(join(save_directory, f))]
+    onlyfiles = [f for f in os.listdir(save_directory) if os.path.isfile(os.path.join(save_directory, f))]
     for item in onlyfiles:
         shutil.move(save_directory + "/" + item, mv_directory + "/" + item)
     
