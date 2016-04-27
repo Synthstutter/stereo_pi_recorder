@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from time import sleep
-
 import picamera
 import save_name
 from trigger import Trigger
