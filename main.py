@@ -35,7 +35,7 @@ if __name__ == "__main__":
     trigger = Trigger()
     green_led = Led(green_led_pin)
     red_led = Led(red_led_pin)
-    file_name_mv = save_name.File_namer(save_directory,  device)
+    file_name = save_name.File_namer(mv_directory,save_directory,  device)
     running = True
     
     while running:
