@@ -6,7 +6,7 @@ import save_name
 from trigger import Trigger
 from led import Led
 from filesystem_mount import nfs_mount, move_file_to_mount
-import threading
+
 
 device = "L"
 pi_master = True
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     trigger = Trigger()
     green_led = Led(green_led_pin)
     red_led = Led(red_led_pin)
-    file_name = save_name.File_namer(mv_directory, device)
+    file_name_mv = save_name.File_namer(save_directory,  device)
     running = True
     
     while running:
@@ -48,7 +48,6 @@ if __name__ == "__main__":
                 green_led.led_off()
                 red_led.led_on()
                 camera.start_recording(file_name.get_name())
-                # red_led_thread.start()
                 sleep(1)
                 trigger.input_state = True
                 while camera.recording:

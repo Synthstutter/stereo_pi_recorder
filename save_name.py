@@ -4,7 +4,8 @@ import time as t
  
 
 class File_namer():
-    def __init__(self, save_directory, device):
+    def __init__(self, mv_directory, save_directory, device):
+        #move directory used for checking which name to put next
         self.file_name = ""
         self.save_directory = save_directory
         if not os.path.exists(self.save_directory):
@@ -12,7 +13,7 @@ class File_namer():
         self.device = device
         
     def get_name(self):
-        onlyfiles = [f for f in os.listdir(self.save_directory) if isfile(join(self.save_directory, f)) and f.split("-")[0] == t.strftime('%Y_%m_%d') and f.split("-")[1][0] == self.device]
+        onlyfiles = [f for f in os.listdir(self.mv_directory) if isfile(join(self.mv_directory, f)) and f.split("-")[0] == t.strftime('%Y_%m_%d') and f.split("-")[1][0] == self.device]
         ints = [int(item.split("_")[3][:2]) for item in onlyfiles]
         try:
             max_int = max(ints)
