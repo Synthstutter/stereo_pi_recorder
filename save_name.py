@@ -8,6 +8,7 @@ class File_namer():
         #move directory used for checking which name to put next
         self.file_name = ""
         self.save_directory = save_directory
+        self.mv_directory = mv_directory
         if not os.path.exists(self.save_directory):
             os.makedirs(self.save_directory)
         self.device = device
