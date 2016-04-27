@@ -24,7 +24,7 @@ def recording_led(red_led_pin):
         sleep(1)
         
 
-pi_master = True
+pi_master = False
 #the following mount only applies if pi_master is set false (if this is slavepi)
 directory_to_mount = "192.168.0.3:/mnt/nfsserver"
 mount_location = "/mnt/nfs"
