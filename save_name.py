@@ -21,7 +21,7 @@ class File_namer():
         # except:
         #     max_int = 0
         # new_int = str(max_int + 1).zfill(2)
-        self.file_name= (self.save_directory + t.strftime('/%Y_%m_%d-%H:%M_') + self.device.__str__() + ".h264")
+        self.file_name= (self.save_directory + t.strftime('/%Y_%m_%d-%H:%M:S_') + self.device.__str__() + ".h264")
         return self.file_name
 
     
