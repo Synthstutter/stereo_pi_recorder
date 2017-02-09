@@ -27,7 +27,7 @@ mv_directory = "/home/nick/videos"
 # if not pi_master:
 #     nfs_mount(directory_to_mount, mount_location)
 #     save_directory = "/home/nick/videos"
-#     mv_directory = "/mnt/nfs/videos"
+#     mv_directory = "/mnt/nfsserver/videos"
 #####################################################################################
 
 if __name__ == "__main__":
